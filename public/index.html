@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Node.js To-Do App</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div id="app">
+        <h1>🚀 Node.js To-Do App</h1>
+        <div class="input-section">
+            <input type="text" id="taskInput" placeholder="Enter task..." maxlength="50">
+            <button id="addBtn">Add Task</button>
+        </div>
+        <div class="stats">
+            Completed: <span id="completedCount">0</span> / 
+            <span id="totalCount">0</span>
+        </div>
+        <ul id="taskList"></ul>
+        <button id="clearBtn" class="clear-btn">🗑️ Clear Completed</button>
+    </div>
+    <script src="js/app.js"></script>
+</body>
+</html>
