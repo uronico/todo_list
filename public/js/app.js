@@ -99,7 +99,7 @@ function updateCounters(tasks) {
     totalCountEl.textContent = total;
 }
 
-// ===== EVENT LISTENERS =====
+//= EVENT LISTENERS =
 addBtn.onclick = addTask;
 clearBtn.onclick = async () => {
     const tasks = await loadTasks();     
