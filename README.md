@@ -13,7 +13,7 @@ Purpose:
 
 Video Demonstration:
 
-[Software Demo Video](http://youtube.link.goes.here)
+[Software Demo Video](https://youtu.be/JHakKBTYiZw)
 
 # Development Environment
 
