@@ -1,19 +1,26 @@
 # Overview
+Title:
+
 Simple To Do List Plan
-{Provide a description of the software that you wrote to demonstrate the JavaScript language.}
 
-{Describe your purpose for writing this software.}
+Description:
 
-{Provide a link to your YouTube demonstration. It should be a 4-5 minute demo of the software running and a walkthrough of the code. Focus should be on sharing what you learned about the language syntax.}
+- This project demonstrates the practical use of JavaScript in building an interactive web application. The app allows users to add, mark, and delete tasks dynamically, showcasing core JavaScript concepts such as DOM manipulation, event handling, and state management. Designed with simplicity and clarity, it highlights how JavaScript can create responsive, user-friendly interfaces without requiring page reloads.
+
+Purpose:
+
+- I write this software as a guide for our everydaylife. This Todo list application will help us track their daily tasks.
+
+Video Demonstration:
 
 [Software Demo Video](http://youtube.link.goes.here)
 
 # Development Environment
 
-Javascript
-HTML
-CSS
-Node.js
+- Javascript
+- HTML
+- CSS
+- Node.js
 
 # Useful Websites
 
@@ -22,8 +29,6 @@ Node.js
 
 # Future Work
 
-{Make a list of things that you need to fix, improve, and add in the future.}
-
-- Item 1
-- Item 2
-- Item 3
+- Create an alarm for every task list
+- Add new functions for my To Do List
+- Create a file where I can save all my done task

@@ -1,9 +1,7 @@
-// ===== NODE.JS API TODO APP - 100 LINES =====
-
-// 1. API base URL
+//API base URL
 const API_URL = 'http://localhost:3000/api/tasks';
 
-// 2. DOM elements
+//DOM elements
 const taskInput = document.getElementById('taskInput');
 const taskList = document.getElementById('taskList');
 const addBtn = document.getElementById('addBtn');
@@ -11,39 +9,39 @@ const clearBtn = document.getElementById('clearBtn');
 const completedCountEl = document.getElementById('completedCount');
 const totalCountEl = document.getElementById('totalCount');
 
-// 3. Add task via API
+//Add task via API
 async function addTask() {
     const text = taskInput.value.trim();
     if (!text) return;
 
     try {
-        const response = await fetch(API_URL, {  // 4. POST request
+        const response = await fetch(API_URL, {  
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ text })
         });
 
         if (response.ok) {
-            taskInput.value = '';             // 5. Clear input
-            loadTasks();                      // 6. Refresh list
+            taskInput.value = '';             
+            loadTasks();                      
         }
     } catch (error) {
         console.error('Add task failed:', error);
     }
 }
 
-// 7. Load all tasks from API
+//Load all tasks from API
 async function loadTasks() {
     try {
-        const response = await fetch(API_URL);    // 8. GET request
+        const response = await fetch(API_URL);    
         const tasks = await response.json();
-        renderTasks(tasks);                       // 9. Render received
+        renderTasks(tasks);                      
     } catch (error) {
         console.error('Load tasks failed:', error);
     }
 }
 
-// 10. Render tasks to DOM
+//Render tasks to DOM
 function renderTasks(tasks) {
     taskList.innerHTML = '';
     tasks.forEach(task => {
@@ -69,10 +67,10 @@ function renderTasks(tasks) {
     updateCounters(tasks);
 }
 
-// 11. Toggle task status
+//Toggle task status
 async function toggleTask(id) {
     try {
-        await fetch(`${API_URL}/${id}`, {     // 12. PUT request
+        await fetch(`${API_URL}/${id}`, {    
             method: 'PUT'
         });
         loadTasks();
@@ -81,10 +79,10 @@ async function toggleTask(id) {
     }
 }
 
-// 13. Delete task
+//Delete task
 async function deleteTask(id) {
     try {
-        await fetch(`${API_URL}/${id}`, {     // 14. DELETE request
+        await fetch(`${API_URL}/${id}`, {     
             method: 'DELETE'
         });
         loadTasks();
@@ -93,7 +91,7 @@ async function deleteTask(id) {
     }
 }
 
-// 15. Update stats
+//Update stats
 function updateCounters(tasks) {
     const total = tasks.length;
     const completed = tasks.filter(t => t.completed).length;
@@ -104,8 +102,7 @@ function updateCounters(tasks) {
 // ===== EVENT LISTENERS =====
 addBtn.onclick = addTask;
 clearBtn.onclick = async () => {
-    const tasks = await loadTasks();      // 16. Clear completed
-    // Server handles this
+    const tasks = await loadTasks();     
     loadTasks();
 };
 
@@ -113,8 +110,8 @@ taskInput.addEventListener('keypress', (e) => {
     if (e.key === 'Enter') addTask();
 });
 
-// 17. Initialize app
+//Initialize app
 taskInput.focus();
-loadTasks();                              // 18. Load on start
+loadTasks();                              
 
-console.log('🌐 Node.js To-Do App Connected!');
+console.log('Node.js To-Do App Connected!');
